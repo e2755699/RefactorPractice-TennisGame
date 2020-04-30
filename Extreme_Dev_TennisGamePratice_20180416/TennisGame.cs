@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Extreme_Dev_TennisGamePratice_20180416
 {
@@ -6,42 +7,21 @@ namespace Extreme_Dev_TennisGamePratice_20180416
     {
         private int _firstPlayerScore;
 
-        private Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
-        {
-            {0, "Love"},
-            {1, "Fifteen"},
-            {2, "Thirty"},
-            {3, "Forty"},
-        };
-
         private int _secondPlayerScore;
 
         public string Scroe()
         {
-            if (isSameScore())
-            {
-                if (_firstPlayerScore == 3)
-                {
-                    return "Deuce";
-                }
-                return _scoreLookup[_firstPlayerScore] + " All";
-            }
-            return _scoreLookup[_firstPlayerScore] + " " + _scoreLookup[_secondPlayerScore];
-        }
-
-        private bool isSameScore()
-        {
-            return _firstPlayerScore == _secondPlayerScore;
+          throw new NotImplementedException();
         }
 
         public void FirstPlayerScore()
         {
-            _firstPlayerScore++;
+          throw new NotImplementedException();
         }
 
         public void SecondPlayerScore()
         {
-            _secondPlayerScore++;
+          throw new NotImplementedException();
         }
     }
 }
