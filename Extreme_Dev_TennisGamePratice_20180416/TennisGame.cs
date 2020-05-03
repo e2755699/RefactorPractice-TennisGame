@@ -9,19 +9,19 @@ namespace Extreme_Dev_TennisGamePratice_20180416
 
         private int _secondPlayerScore;
 
-        public string Scroe()
+        public string Score()
         {
-          throw new NotImplementedException();
+            return "Love All";
         }
 
         public void FirstPlayerScore()
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void SecondPlayerScore()
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
