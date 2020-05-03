@@ -11,17 +11,21 @@ namespace Extreme_Dev_TennisGamePratice_20180416
 
         public string Score()
         {
+            if (_firstPlayerScore == 1 && _secondPlayerScore == 0)
+            {
+                return "Fifteen Love";
+            }
             return "Love All";
         }
 
         public void FirstPlayerScore()
         {
-            throw new NotImplementedException();
+            _firstPlayerScore++;
         }
 
         public void SecondPlayerScore()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

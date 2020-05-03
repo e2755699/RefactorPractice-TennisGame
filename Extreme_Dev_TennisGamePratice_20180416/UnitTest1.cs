@@ -91,12 +91,14 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         private void GivenSecondPlayerScore(int times)
         {
             throw new NotImplementedException();
-
         }
 
         private void GivenFirstPlayerScore(int times)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < times; i++)
+            {
+                tennisGame.FirstPlayerScore();
+            }
         }
     }
 }
