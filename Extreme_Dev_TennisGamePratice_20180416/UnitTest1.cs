@@ -11,49 +11,49 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         [TestMethod]
         public void Love_All()
         {
-            Assert.AreEqual("Love All", tennisGame.Scroe());
+            Assert.AreEqual("Love All", tennisGame.Score());
         }
 
         [TestMethod]
         public void Fifteen_Love()
         {
             tennisGame.FirstPlayerScore();
-            Assert.AreEqual("Fifteen Love", tennisGame.Scroe());
+            Assert.AreEqual("Fifteen Love", tennisGame.Score());
         }
 
         [TestMethod]
         public void Thirty_Love()
         {
             GivenFirstPlayerScore(2);
-            Assert.AreEqual("Thirty Love", tennisGame.Scroe());
+            Assert.AreEqual("Thirty Love", tennisGame.Score());
         }
 
         [TestMethod]
         public void Forty_Love()
         {
             GivenFirstPlayerScore(3);
-            Assert.AreEqual("Forty Love", tennisGame.Scroe());
+            Assert.AreEqual("Forty Love", tennisGame.Score());
         }
 
         [TestMethod]
         public void Love_Fifteen()
         {
             tennisGame.SecondPlayerScore();
-            Assert.AreEqual("Love Fifteen", tennisGame.Scroe());
+            Assert.AreEqual("Love Fifteen", tennisGame.Score());
         }
 
         [TestMethod]
         public void Love_Thirty()
         {
             GivenSecondPlayerScore(2);
-            Assert.AreEqual("Love Thirty", tennisGame.Scroe());
+            Assert.AreEqual("Love Thirty", tennisGame.Score());
         }
 
         [TestMethod]
         public void Love_Forty()
         {
             GivenSecondPlayerScore(3);
-            Assert.AreEqual("Love Forty", tennisGame.Scroe());
+            Assert.AreEqual("Love Forty", tennisGame.Score());
         }
 
         [TestMethod]
@@ -61,7 +61,7 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         {
             GivenFirstPlayerScore(1);
             GivenSecondPlayerScore(1);
-            Assert.AreEqual("Fifteen All", tennisGame.Scroe());
+            Assert.AreEqual("Fifteen All", tennisGame.Score());
         }
 
         [TestMethod]
@@ -69,7 +69,7 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         {
             GivenFirstPlayerScore(2);
             GivenSecondPlayerScore(2);
-            Assert.AreEqual("Thirty All", tennisGame.Scroe());
+            Assert.AreEqual("Thirty All", tennisGame.Score());
         }
 
         [TestMethod]
@@ -77,7 +77,7 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         {
             GivenFirstPlayerScore(3);
             GivenSecondPlayerScore(3);
-            Assert.AreEqual("Deuce", tennisGame.Scroe());
+            Assert.AreEqual("Deuce", tennisGame.Score());
         }
 
         [TestMethod]
@@ -85,7 +85,7 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         {
             GivenFirstPlayerScore(4);
             GivenSecondPlayerScore(4);
-            Assert.AreEqual("Deuce", tennisGame.Scroe());
+            Assert.AreEqual("Deuce", tennisGame.Score());
         }
 
         private void GivenSecondPlayerScore(int times)
