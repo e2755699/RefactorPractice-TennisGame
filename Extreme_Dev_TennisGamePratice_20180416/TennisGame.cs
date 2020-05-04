@@ -14,9 +14,14 @@ namespace Extreme_Dev_TennisGamePratice_20180416
             if (_firstPlayerScore == 1 && _secondPlayerScore == 0)
             {
                 return "Fifteen Love";
-            }else if (_firstPlayerScore == 2)
+            }
+            if (_firstPlayerScore == 2)
             {
                 return "Thirty Love";
+            }
+            if (_firstPlayerScore == 3)
+            {
+                return "Forty Love";
             }
             return "Love All";
         }
