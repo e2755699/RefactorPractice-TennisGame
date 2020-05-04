@@ -23,6 +23,11 @@ namespace Extreme_Dev_TennisGamePratice_20180416
             {
                 return "Forty Love";
             }
+
+            if (_firstPlayerScore ==0 && _secondPlayerScore == 1)
+            {
+                return "Love Fifteen";
+            }
             return "Love All";
         }
 
@@ -33,7 +38,7 @@ namespace Extreme_Dev_TennisGamePratice_20180416
 
         public void SecondPlayerScore()
         {
-
+            _secondPlayerScore++;
         }
     }
 }
