@@ -15,11 +15,11 @@ namespace Extreme_Dev_TennisGamePratice_20180416
             {
                 return "Fifteen Love";
             }
-            if (_firstPlayerScore == 2)
+            if (_firstPlayerScore == 2 && _secondPlayerScore == 0)
             {
                 return "Thirty Love";
             }
-            if (_firstPlayerScore == 3)
+            if (_firstPlayerScore == 3 && _secondPlayerScore == 0)
             {
                 return "Forty Love";
             }
@@ -27,6 +27,11 @@ namespace Extreme_Dev_TennisGamePratice_20180416
             if (_firstPlayerScore ==0 && _secondPlayerScore == 1)
             {
                 return "Love Fifteen";
+            }
+
+            if (_firstPlayerScore == 0 && _secondPlayerScore == 2)
+            {
+                return "Love Thirty";
             }
             return "Love All";
         }
