@@ -48,15 +48,11 @@ namespace Extreme_Dev_TennisGamePratice_20180416
             {
                 return "Thirty All";
             }
-            if (_firstPlayerScore == 3 && _secondPlayerScore == 3)
+            if (_firstPlayerScore == _secondPlayerScore && _firstPlayerScore>=3)
             {
                 return "Deuce";
             }
-
-            if (_firstPlayerScore == 4 && _secondPlayerScore == 4)
-            {
-                return "Deuce";
-            }
+            
             return "Love All";
         }
 
