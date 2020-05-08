@@ -33,6 +33,16 @@ namespace Extreme_Dev_TennisGamePratice_20180416
             {
                 return "Love Thirty";
             }
+
+            if (_firstPlayerScore == 0 && _secondPlayerScore == 3)
+            {
+                return "Love Forty";
+            }
+
+            if (_firstPlayerScore == 1 && _secondPlayerScore == 1)
+            {
+                return "Fifteen Love";
+            }
             return "Love All";
         }
 
