@@ -15,16 +15,15 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         {
             if (_firstPlayerScore == 0 && _secondPlayerScore == 0)
                 return "Love All";
-            if (_secondPlayerScore == 0)
+            if (_secondPlayerScore == 0 || _firstPlayerScore==0)
             {
-                return _scoreMapping[_firstPlayerScore] + " Love";
+                return _scoreMapping[_firstPlayerScore] + " "+_scoreMapping[_secondPlayerScore];
             }
 
-            if (_firstPlayerScore == 0)
-                return "Love " + _scoreMapping[_secondPlayerScore];
-            else if (_firstPlayerScore == 1 && _secondPlayerScore == 1)
-                return "Fifteen All";
-            else if (_firstPlayerScore == 2 && _secondPlayerScore == 2) return "Thirty All";
+            if (_firstPlayerScore == _secondPlayerScore && _firstPlayerScore<3)
+            {
+                return _scoreMapping[_firstPlayerScore] + " All";
+            }
 
             if (_firstPlayerScore == _secondPlayerScore && _firstPlayerScore>=3)
             {
