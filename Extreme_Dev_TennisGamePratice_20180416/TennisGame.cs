@@ -9,43 +9,22 @@ namespace Extreme_Dev_TennisGamePratice_20180416
 
         private int _secondPlayerScore;
         private List<Score> _scores;
+        private Dictionary<int, string> _scoreMapping = new Dictionary<int, string>() {{0,"Love"},{1, "Fifteen"},{2,"Thirty"},{3,"Forty"}};
 
         public string Score()
         {
-
+            if (_firstPlayerScore == 0 && _secondPlayerScore == 0)
+                return "Love All";
             if (_secondPlayerScore == 0)
             {
-                Dictionary<int, string> scoreMapping = new Dictionary<int, string>() {{1, "Fifteen"},{2,"Thirty"},{3,"Forty"}};
-                switch (_firstPlayerScore)
-                {
-                    case 1:
-                        return  scoreMapping[1] +" Love";
-                    case 2:
-                        return scoreMapping[2] + " Love";
-                    case 3:
-                        return scoreMapping[3] + " Love";
-                }
+                return _scoreMapping[_firstPlayerScore] + " Love";
             }
 
-            switch (_firstPlayerScore)
-            {
-                case 0:
-                    switch (_secondPlayerScore)
-                    {
-                        case 1:
-                            return "Love Fifteen";
-                        case 2:
-                            return "Love Thirty";
-                        case 3:
-                            return "Love Forty";
-                    }
-
-                    break;
-                case 1 when _secondPlayerScore == 1:
-                    return "Fifteen All";
-                case 2 when _secondPlayerScore == 2:
-                    return "Thirty All";
-            }
+            if (_firstPlayerScore == 0)
+                return "Love " + _scoreMapping[_secondPlayerScore];
+            else if (_firstPlayerScore == 1 && _secondPlayerScore == 1)
+                return "Fifteen All";
+            else if (_firstPlayerScore == 2 && _secondPlayerScore == 2) return "Thirty All";
 
             if (_firstPlayerScore == _secondPlayerScore && _firstPlayerScore>=3)
             {
