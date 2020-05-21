@@ -8,46 +8,45 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         private int _firstPlayerScore;
 
         private int _secondPlayerScore;
+        private List<Score> _scores;
 
         public string Score()
         {
-            if (_firstPlayerScore == 1 && _secondPlayerScore == 0)
+
+            if (_secondPlayerScore == 0)
             {
-                return "Fifteen Love";
-            }
-            if (_firstPlayerScore == 2 && _secondPlayerScore == 0)
-            {
-                return "Thirty Love";
-            }
-            if (_firstPlayerScore == 3 && _secondPlayerScore == 0)
-            {
-                return "Forty Love";
+                Dictionary<int, string> scoreMapping = new Dictionary<int, string>() {{1, "Fifteen"},{2,"Thirty"},{3,"Forty"}};
+                switch (_firstPlayerScore)
+                {
+                    case 1:
+                        return  scoreMapping[1] +" Love";
+                    case 2:
+                        return scoreMapping[2] + " Love";
+                    case 3:
+                        return scoreMapping[3] + " Love";
+                }
             }
 
-            if (_firstPlayerScore ==0 && _secondPlayerScore == 1)
+            switch (_firstPlayerScore)
             {
-                return "Love Fifteen";
+                case 0:
+                    switch (_secondPlayerScore)
+                    {
+                        case 1:
+                            return "Love Fifteen";
+                        case 2:
+                            return "Love Thirty";
+                        case 3:
+                            return "Love Forty";
+                    }
+
+                    break;
+                case 1 when _secondPlayerScore == 1:
+                    return "Fifteen All";
+                case 2 when _secondPlayerScore == 2:
+                    return "Thirty All";
             }
 
-            if (_firstPlayerScore == 0 && _secondPlayerScore == 2)
-            {
-                return "Love Thirty";
-            }
-
-            if (_firstPlayerScore == 0 && _secondPlayerScore == 3)
-            {
-                return "Love Forty";
-            }
-
-            if (_firstPlayerScore == 1 && _secondPlayerScore == 1)
-            {
-                return "Fifteen All";
-            }
-
-            if (_firstPlayerScore == 2 && _secondPlayerScore == 2)
-            {
-                return "Thirty All";
-            }
             if (_firstPlayerScore == _secondPlayerScore && _firstPlayerScore>=3)
             {
                 return "Deuce";
@@ -65,5 +64,13 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         {
             _secondPlayerScore++;
         }
+        private void GivenScore()
+        {
+            _scores = new List<Score>()
+            {
+                new Score() {},
+            };
+        }
     }
+
 }
