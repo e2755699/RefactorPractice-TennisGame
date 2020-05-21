@@ -8,29 +8,40 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         private int _firstPlayerScore;
 
         private int _secondPlayerScore;
-        private List<Score> _scores;
         private Dictionary<int, string> _scoreMapping = new Dictionary<int, string>() {{0,"Love"},{1, "Fifteen"},{2,"Thirty"},{3,"Forty"}};
 
         public string Score()
         {
-            if (_firstPlayerScore == 0 && _secondPlayerScore == 0)
+            if (IsGameStart())
                 return "Love All";
-            if (_secondPlayerScore == 0 || _firstPlayerScore==0)
+
+            if (IsDeuce())
             {
-                return _scoreMapping[_firstPlayerScore] + " "+_scoreMapping[_secondPlayerScore];
+                return "Deuce";
             }
 
-            if (_firstPlayerScore == _secondPlayerScore && _firstPlayerScore<3)
+            if (IsSameScore())
             {
                 return _scoreMapping[_firstPlayerScore] + " All";
             }
 
-            if (_firstPlayerScore == _secondPlayerScore && _firstPlayerScore>=3)
-            {
-                return "Deuce";
-            }
-            
-            return "Love All";
+            return _scoreMapping[_firstPlayerScore] + " " + _scoreMapping[_secondPlayerScore];
+
+        }
+
+        private bool IsSameScore()
+        {
+            return _firstPlayerScore == _secondPlayerScore && _firstPlayerScore<3;
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScore == _secondPlayerScore && _firstPlayerScore>=3;
+        }
+
+        private bool IsGameStart()
+        {
+            return _firstPlayerScore == 0 && _secondPlayerScore == 0;
         }
 
         public void FirstPlayerScore()
@@ -41,13 +52,6 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         public void SecondPlayerScore()
         {
             _secondPlayerScore++;
-        }
-        private void GivenScore()
-        {
-            _scores = new List<Score>()
-            {
-                new Score() {},
-            };
         }
     }
 

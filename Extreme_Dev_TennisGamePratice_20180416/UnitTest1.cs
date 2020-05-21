@@ -65,6 +65,14 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         }
 
         [TestMethod]
+        public void Fiftten_Thirty()
+        {
+            GivenFirstPlayerScore(1);
+            GivenSecondPlayerScore(2);
+            Assert.AreEqual("Fifteen Thirty", tennisGame.Score());
+        }
+
+        [TestMethod]
         public void Thirty_All()
         {
             GivenFirstPlayerScore(2);
