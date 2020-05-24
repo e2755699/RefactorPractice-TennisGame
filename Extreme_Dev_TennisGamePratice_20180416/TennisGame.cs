@@ -8,11 +8,11 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         private int _firstPlayerScore;
 
         private int _secondPlayerScore;
-        private Dictionary<int, string> _scoreMapping = new Dictionary<int, string>() {{0,"Love"},{1, "Fifteen"},{2,"Thirty"},{3,"Forty"}};
+        private readonly Dictionary<int, string> _scoreMapping = new Dictionary<int, string>() {{0,"Love"},{1, "Fifteen"},{2,"Thirty"},{3,"Forty"}};
 
         public string Score()
         {
-            if (IsGameStart())
+            if (IsLoveAll())
                 return "Love All";
 
             if (IsDeuce())
@@ -39,7 +39,7 @@ namespace Extreme_Dev_TennisGamePratice_20180416
             return _firstPlayerScore == _secondPlayerScore && _firstPlayerScore>=3;
         }
 
-        private bool IsGameStart()
+        private bool IsLoveAll()
         {
             return _firstPlayerScore == 0 && _secondPlayerScore == 0;
         }
