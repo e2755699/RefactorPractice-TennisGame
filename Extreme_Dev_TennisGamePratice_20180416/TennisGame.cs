@@ -16,14 +16,29 @@ namespace Extreme_Dev_TennisGamePractice_20180416
             {
                 if (IsDeuceGame())
                 {
-                    return "Deuce";
+                    return Deuce();
                 }
 
-                return _scoreMapping[_firstPlayerScore] + " All";
+                return SameScoreBeforeDecue();
             }
 
-            return _scoreMapping[_firstPlayerScore] + " " + _scoreMapping[_secondPlayerScore];
+            return DifferenceS();
 
+        }
+
+        private string DifferenceS()
+        {
+            return _scoreMapping[_firstPlayerScore] + " " + _scoreMapping[_secondPlayerScore];
+        }
+
+        private string SameScoreBeforeDecue()
+        {
+            return _scoreMapping[_firstPlayerScore] + " All";
+        }
+
+        private static string Deuce()
+        {
+            return "Deuce";
         }
 
         private bool IsSameScore()
