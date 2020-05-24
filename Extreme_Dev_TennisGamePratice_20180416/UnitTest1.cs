@@ -1,12 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Extreme_Dev_TennisGamePratice_20180416
+namespace Extreme_Dev_TennisGamePractice_20180416
 {
     [TestClass]
     public class UnitTest1
     {
-        private TennisGame tennisGame = new TennisGame();
+        private readonly TennisGame tennisGame = new TennisGame();
 
         [TestMethod]
         public void Love_All()

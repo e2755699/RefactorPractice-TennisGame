@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Extreme_Dev_TennisGamePratice_20180416
+namespace Extreme_Dev_TennisGamePractice_20180416
 {
     public class TennisGame
     {
@@ -12,13 +12,13 @@ namespace Extreme_Dev_TennisGamePratice_20180416
 
         public string Score()
         {
-            if (IsDeuce())
-            {
-                return "Deuce";
-            }
-
             if (IsSameScore())
             {
+                if (IsDeuceGame())
+                {
+                    return "Deuce";
+                }
+
                 return _scoreMapping[_firstPlayerScore] + " All";
             }
 
@@ -28,12 +28,12 @@ namespace Extreme_Dev_TennisGamePratice_20180416
 
         private bool IsSameScore()
         {
-            return _firstPlayerScore == _secondPlayerScore && _firstPlayerScore<3;
+            return _firstPlayerScore == _secondPlayerScore;
         }
 
-        private bool IsDeuce()
+        private bool IsDeuceGame()
         {
-            return _firstPlayerScore == _secondPlayerScore && _firstPlayerScore>=3;
+            return _firstPlayerScore>=3;
         }
 
         public void FirstPlayerScore()
