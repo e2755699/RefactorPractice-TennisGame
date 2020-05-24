@@ -12,18 +12,7 @@ namespace Extreme_Dev_TennisGamePractice_20180416
 
         public string Score()
         {
-            if (IsSameScore())
-            {
-                if (IsDeuceGame())
-                {
-                    return Deuce();
-                }
-
-                return SameScoreBeforeDecue();
-            }
-
-            return DifferenceS();
-
+            return IsSameScore() ? IsDeuceGame() ? Deuce() : SameScoreBeforeDecue() : DifferenceS();
         }
 
         private string DifferenceS()
