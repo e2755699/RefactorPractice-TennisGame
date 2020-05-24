@@ -12,9 +12,6 @@ namespace Extreme_Dev_TennisGamePratice_20180416
 
         public string Score()
         {
-            if (IsLoveAll())
-                return "Love All";
-
             if (IsDeuce())
             {
                 return "Deuce";
@@ -37,11 +34,6 @@ namespace Extreme_Dev_TennisGamePratice_20180416
         private bool IsDeuce()
         {
             return _firstPlayerScore == _secondPlayerScore && _firstPlayerScore>=3;
-        }
-
-        private bool IsLoveAll()
-        {
-            return _firstPlayerScore == 0 && _secondPlayerScore == 0;
         }
 
         public void FirstPlayerScore()
